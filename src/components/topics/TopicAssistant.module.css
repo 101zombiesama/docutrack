@@ -1,0 +1,146 @@
+.conversation {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 420px;
+  min-height: 120px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.intro { padding: 4px 0 2px; }
+
+.introText {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.introText strong { color: var(--text); font-weight: 560; }
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.suggestion {
+  padding: 6px 11px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  text-align: left;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.suggestion:hover {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  background: var(--accent-soft);
+}
+
+.userRow { display: flex; justify-content: flex-end; }
+
+.userBubble {
+  max-width: 88%;
+  padding: 8px 12px;
+  border-radius: var(--r-md) var(--r-md) 3px var(--r-md);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.assistantRow { display: flex; }
+
+.assistantBubble {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  animation: dtRise 240ms var(--ease-out) both;
+}
+
+.thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.spin { animation: dtSpin 900ms linear infinite; }
+
+.errorBubble {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 11px 13px;
+  border: 1px solid var(--danger-border);
+  border-radius: var(--r-md);
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+.errorBubble svg { flex-shrink: 0; margin-top: 2px; }
+
+.citations {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 11px;
+  padding-top: 9px;
+  border-top: 1px solid var(--border-soft);
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+}
+
+.citation {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 2px;
+}
+
+.citation:hover { color: var(--accent-text); }
+
+.composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 7px 7px 7px 11px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+
+.composer:focus-within { border-color: var(--accent); box-shadow: var(--ring); }
+
+.input {
+  flex: 1;
+  min-width: 0;
+  max-height: 120px;
+  border: none;
+  background: none;
+  resize: none;
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  padding: 6px 0;
+}
+
+.input:focus { outline: none; }
+.input::placeholder { color: var(--text-faint); }

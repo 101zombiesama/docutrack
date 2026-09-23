@@ -1,0 +1,111 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 22px;
+  align-items: start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+}
+
+.avatarRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.avatarActions { min-width: 0; }
+
+.avatarLabel { font-size: var(--fs-base); font-weight: 560; }
+
+.avatarHint {
+  margin-top: 1px;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.avatarButtons { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.fullWidth { grid-column: 1 / -1; }
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.dirtyHint { font-size: var(--fs-sm); color: var(--text-muted); }
+
+.footerButtons { display: flex; gap: 8px; margin-left: auto; }
+
+.side { display: flex; flex-direction: column; gap: 14px; }
+
+.sideCard {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+}
+
+.sideTitle {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  margin-bottom: 11px;
+}
+
+.sideStats { display: flex; flex-direction: column; gap: 9px; }
+
+.sideStats li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.sideStats svg { color: var(--text-faint); flex-shrink: 0; }
+
+.sideStats span {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.sideNote {
+  margin-top: 13px;
+  padding-top: 11px;
+  border-top: 1px solid var(--border-soft);
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+}
+
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .fields { grid-template-columns: 1fr; }
+  .avatarRow { flex-direction: column; align-items: flex-start; }
+  .footerButtons { width: 100%; }
+  .footerButtons > * { flex: 1; }
+}

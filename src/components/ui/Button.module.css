@@ -1,0 +1,101 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: var(--r-sm);
+  border: 1px solid transparent;
+  font-weight: 530;
+  font-size: var(--fs-base);
+  letter-spacing: -0.006em;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0.5px);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Sizes --- */
+.sm { height: 30px; padding: 0 10px; font-size: var(--fs-sm); border-radius: var(--r-xs); gap: 5px; }
+.md { height: 36px; padding: 0 13px; }
+.lg { height: 44px; padding: 0 20px; font-size: var(--fs-md); border-radius: var(--r-md); }
+
+.iconOnly.sm { width: 30px; padding: 0; }
+.iconOnly.md { width: 36px; padding: 0; }
+.iconOnly.lg { width: 44px; padding: 0; }
+
+.fullWidth { width: 100%; }
+
+/* --- Variants --- */
+.primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  box-shadow: var(--shadow-xs);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.secondary {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+  box-shadow: var(--shadow-xs);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--surface-3);
+  color: var(--text);
+}
+
+.subtle {
+  background: var(--surface-3);
+  color: var(--text);
+}
+
+.subtle:hover:not(:disabled) {
+  background: var(--border);
+}
+
+.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+[data-theme='dark'] .danger {
+  color: var(--n-950);
+}
+
+.danger:hover:not(:disabled) {
+  filter: brightness(1.07);
+}
+
+.spinner {
+  animation: dtSpin 700ms linear infinite;
+  flex-shrink: 0;
+}

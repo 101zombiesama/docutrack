@@ -1,0 +1,102 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--topbar-h);
+  padding: 0 clamp(14px, 3vw, 28px);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.mobileLogo { display: none; }
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: min(380px, 100%);
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  text-align: left;
+  transition: border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
+}
+
+.search:hover {
+  border-color: var(--border-strong);
+  color: var(--text-secondary);
+}
+
+.searchText {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kbd {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 560;
+  color: var(--text-faint);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-sm);
+  color: var(--text-muted);
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.iconButton:hover { background: var(--surface-3); color: var(--text); }
+
+.mobileOnly { display: none; }
+
+.avatarLink {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 50%;
+  transition: background var(--t-fast) var(--ease);
+}
+
+.avatarLink:hover { background: var(--surface-3); }
+
+@media (max-width: 960px) {
+  .mobileLogo { display: inline-flex; margin-right: 2px; }
+  .mobileOnly { display: grid; }
+  .avatarLink { display: none; }
+  .searchText { display: none; }
+  .kbd { display: none; }
+  .search {
+    width: auto;
+    flex: 1;
+    justify-content: flex-start;
+  }
+  .search::after {
+    content: 'Search';
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

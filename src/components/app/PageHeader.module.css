@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  align-self: flex-start;
+  margin-left: -6px;
+  padding: 4px 8px 4px 5px;
+  border-radius: var(--r-xs);
+  font-size: var(--fs-sm);
+  font-weight: 520;
+  color: var(--text-muted);
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.back:hover { background: var(--surface-3); color: var(--text); }
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.text { min-width: 0; flex: 1 1 320px; }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.description {
+  margin-top: 7px;
+  max-width: 72ch;
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  .actions { width: 100%; }
+  .actions > * { flex: 1; }
+}

@@ -1,0 +1,43 @@
+.markdown {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: var(--fs-base);
+  line-height: 1.62;
+  color: var(--text-secondary);
+}
+
+.markdown strong { color: var(--text); font-weight: 600; }
+.markdown em { color: var(--text-muted); font-style: italic; }
+
+.paragraph { overflow-wrap: anywhere; }
+
+.continuation {
+  margin-top: -5px;
+  padding-left: 17px;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 2px;
+}
+
+.list li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}

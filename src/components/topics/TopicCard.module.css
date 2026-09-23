@@ -1,0 +1,160 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 16px 16px 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+  transition:
+    border-color var(--t-med) var(--ease),
+    box-shadow var(--t-med) var(--ease),
+    transform var(--t-med) var(--ease);
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.card:focus-within {
+  border-color: var(--accent);
+}
+
+.archived { background: var(--surface-2); }
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: var(--r-sm);
+}
+
+.headText { flex: 1; min-width: 0; }
+
+.name {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  letter-spacing: -0.017em;
+  line-height: 1.3;
+}
+
+.link { outline-offset: 3px; }
+
+/* Stretched link keeps the whole card clickable while the menu stays on top. */
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-lg);
+}
+
+.description {
+  margin-top: 3px;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  margin: -3px -4px 0 0;
+}
+
+.types {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.types svg { flex-shrink: 0; color: var(--text-faint); }
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  /* Keeps footers aligned across a row of cards with different title lengths. */
+  margin-top: auto;
+  padding-top: 11px;
+  border-top: 1px solid var(--border-soft);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.metric { font-variant-numeric: tabular-nums; }
+.dot { color: var(--text-faint); }
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 7px;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font-size: 10.5px;
+  font-weight: 540;
+  white-space: nowrap;
+}
+
+.recs { background: var(--accent-soft); border-color: var(--accent-soft-border); color: var(--accent-text); }
+.attention { background: var(--warning-soft); border-color: var(--warning-border); color: var(--warning); }
+.busy { background: var(--info-soft); border-color: var(--info-border); color: var(--info); }
+.neutral { background: var(--surface-3); color: var(--text-muted); }
+
+/* --- List view --- */
+.listCard {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 14px;
+}
+
+.listCard .head { flex: 1; min-width: 0; align-items: center; }
+.listCard .types { display: none; }
+
+.listCard .footer {
+  padding-top: 0;
+  border-top: none;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+}
+
+.listCard .description { -webkit-line-clamp: 1; line-clamp: 1; }
+
+@media (max-width: 720px) {
+  .listCard { flex-direction: column; align-items: stretch; gap: 10px; }
+  .listCard .footer { justify-content: flex-start; }
+}

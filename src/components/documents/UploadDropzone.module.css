@@ -1,0 +1,100 @@
+.wrap { display: flex; flex-direction: column; gap: 10px; }
+
+.zone {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--r-lg);
+  background: var(--surface-2);
+  transition:
+    border-color var(--t-med) var(--ease),
+    background var(--t-med) var(--ease),
+    transform var(--t-med) var(--ease);
+}
+
+.zone:hover { border-color: var(--accent); background: var(--surface); }
+
+.compact { padding: 13px 15px; gap: 11px; }
+
+.dragging {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: scale(1.005);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.compact .icon { width: 34px; height: 34px; }
+
+.copy { min-width: 0; }
+
+.title {
+  font-size: var(--fs-base);
+  font-weight: 530;
+  color: var(--text);
+}
+
+.browse {
+  color: var(--accent-text);
+  font-weight: 560;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  border-radius: 3px;
+}
+
+.browse:hover { color: var(--accent); }
+
+.hint {
+  margin-top: 3px;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.rejected { display: flex; flex-direction: column; gap: 6px; }
+
+.rejectedItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid var(--danger-border);
+  background: var(--danger-soft);
+  border-radius: var(--r-sm);
+  color: var(--danger);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.rejectedItem svg { flex-shrink: 0; margin-top: 2px; }
+.rejectedItem span { flex: 1; }
+.rejectedItem strong { font-weight: 600; }
+
+.rejectedItem button {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--r-xs);
+  color: inherit;
+  opacity: 0.7;
+}
+
+.rejectedItem button:hover { opacity: 1; background: color-mix(in srgb, var(--danger) 12%, transparent); }
+
+@media (max-width: 560px) {
+  .zone { flex-direction: column; text-align: center; padding: 20px 16px; }
+}

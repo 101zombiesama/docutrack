@@ -1,0 +1,142 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px 16px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  transition: border-color var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease), opacity var(--t-med) var(--ease);
+  animation: dtRise 280ms var(--ease-out) both;
+}
+
+.card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+}
+
+.high::before { background: var(--prio-high); }
+.medium::before { background: var(--prio-med); }
+.low::before { background: var(--prio-low); }
+
+.closed { opacity: 0.62; }
+.closed:hover { opacity: 1; }
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border-radius: var(--r-pill);
+  border: 1px solid transparent;
+  font-size: 10.5px;
+  font-weight: 560;
+  white-space: nowrap;
+}
+
+.p_high { background: var(--prio-high-soft); border-color: var(--prio-high-border); color: var(--prio-high); }
+.p_medium { background: var(--prio-med-soft); border-color: var(--prio-med-border); color: var(--prio-med); }
+.p_low { background: var(--prio-low-soft); border-color: var(--prio-low-border); color: var(--prio-low); }
+
+.section,
+.context,
+.status {
+  font-size: 10.5px;
+  font-weight: 520;
+  color: var(--text-muted);
+  padding: 1px 7px;
+  border-radius: var(--r-pill);
+  background: var(--surface-3);
+  white-space: nowrap;
+  max-width: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.statusClosed { color: var(--text-secondary); }
+
+.collapse {
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--r-xs);
+  color: var(--text-faint);
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.collapse:hover { background: var(--surface-3); color: var(--text); }
+
+.chevron { transition: transform var(--t-med) var(--ease); }
+.chevronOpen { transform: rotate(180deg); }
+
+.title {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.explanation {
+  font-size: var(--fs-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.detail {
+  padding: 9px 11px;
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+}
+
+.detailLabel {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 3px;
+}
+
+.detailText {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.meta {
+  font-size: var(--fs-xs);
+  color: var(--text-faint);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-soft);
+}

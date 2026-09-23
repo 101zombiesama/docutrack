@@ -1,0 +1,38 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text);
+}
+
+.mark { flex-shrink: 0; }
+
+.plate {
+  fill: var(--text);
+}
+
+[data-theme='dark'] .plate {
+  fill: var(--surface-3);
+}
+
+.lines,
+.links {
+  color: var(--bg-elevated);
+  opacity: 0.85;
+}
+
+[data-theme='dark'] .lines,
+[data-theme='dark'] .links {
+  color: var(--text);
+  opacity: 0.75;
+}
+
+.node {
+  fill: var(--accent);
+}
+
+.word {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  letter-spacing: -0.028em;
+}
